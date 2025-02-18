@@ -3,260 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convocatoria 2025 - Banda Enrique Gómez Carrillo</title>
+    <title>Convocatoria 2025</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #000;
-            color: white;
+        * {
             margin: 0;
             padding: 0;
-            transition: background 0.5s, color 0.5s;
+            box-sizing: border-box;
         }
-        .dark-mode {
-            background-color: white;
-            color: black;
-        }
-        .toggle-button {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 5px 8px;
-            background: #ff0000;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            z-index: 1000;
-            font-size: 12px;
-        }
-        .slideshow {
-            position: relative;
-            max-width: 100%;
-            height: 400px;
-            overflow: hidden;
-            .slideshow {
-    position: relative;
-    max-width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
-.active {
-    opacity: 1;
-}
-
-/* Botones de navegación */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-        }
-        .cards-container {
+        body {
+            font-family: Arial, sans-serif;
+            background: url('fondo.jpg') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-            padding: 50px 20px;
-        }
-        .card-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 50px;
-            padding: 10px;
-            border-radius: 10px;
-            width: 100%;
-        }
-        .card-title:nth-child(1) { text-shadow: 0 0 10px yellow; color: yellow; }
-        .card-title:nth-child(3) { text-shadow: 0 0 10px red; color: red; }
-        .card-title:nth-child(5) { text-shadow: 0 0 10px white; color: white; }
-        .card {
-            width: 350px;
-            height: 450px;
-            perspective: 1000px;
-            margin-bottom: 50px;
-        }
-        .card-inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-        .card-front, .card-back {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            backface-visibility: hidden;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 20px;
-        }
-        .card-front img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .card-back {
-            background: gray;
+            align-items: center;
             color: white;
-            transform: rotateY(180deg);
+            text-align: center;
         }
-        .card:nth-child(2) .card-front { border: 5px solid yellow; box-shadow: 0 0 15px yellow; }
-        .card:nth-child(4) .card-front { border: 5px solid red; box-shadow: 0 0 15px red; }
-        .card:nth-child(6) .card-front { border: 5px solid white; box-shadow: 0 0 15px white; }
+        .container {
+            width: 80%;
+            text-align: left;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+        }
+        .header nav {
+            display: flex;
+            gap: 40px;
+        }
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .content {
+            position: absolute;
+            bottom: 100px;
+            left: 50px;
+        }
+        .title {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .social {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .social img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
-    <button class="toggle-button" onclick="toggleDarkMode()">Modo Oscuro</button>
-    <h1>🟡🔴️⚪Banda Enrique Gómez Carrillo🟡🔴️⚪</h1>
-    <div class="slideshow">
-        <div class="slide">
-            <img src="batonista1.jpg" alt="Batonista">
-            <h1>La belleza y el carisma de la Banda</h1>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <a href="#" onclick="location.reload()">Inicio</a>
+                <a href="2index.html">Convocatoria 2025</a>
+            </nav>
         </div>
-        <div class="slide">
-            <img src="gastador1.jpg" alt="Gastador">
-            <h1>La firmeza y la cara de la Banda</h1>
-        </div>
-        <div class="slide">
-            <img src="banda.PNG" alt="Banda">
-            <h1>El sonar del campeón</h1>
-        </div>
-        </div>
-        <h2>Convocatoria 2025 de la Banda Enrique Gómez Carrillo</h2>
-        <h4>🟡🔴️⚪ Nadie se nos escapa🟡🔴️⚪</h4>
-        <br>
-        <h5>🎶 ¡Únete a la Banda del Instituto Enrique Gómez Carrillo! 🎶</h5>
-        <p>Si la música te mueve, si el ritmo está en tu sangre y si quieres formar parte de algo grande, esta es tu oportunidad. 🔥 Nuestra gloriosa banda está buscando nuevos integrantes con ganas de hacer historia. No importa si tienes experiencia o nunca has tocado un instrumento, aquí te enseñamos, te apoyamos y juntos haremos que nuestra banda brille como nunca. 🌟 Nuestra meta es clara: competir, ganar y dejar en alto el nombre de nuestro instituto. 🏆🎺🥁
-        </p>
-        <!-- Botones de navegación -->
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>    
-    </div>
-    <audio id="drumSound" src="tambores.mp3"></audio>
-    <audio id="hitSound" src="baquetazo.mp3"></audio>
-    <div class="cards-container">
-        <div class="card-title">Banda de Guerra</div>
-        <div class="card" onmouseover="playDrum()">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="banda de guerra general.jpg" alt="Banda de Guerra">
-                </div>
-                <div class="card-back"> ¡Únete a la Banda de Guerra del Instituto Enrique Gómez Carrillo! Aquí no solo tocamos, marcamos historia. Las escuadras que nos hacen invencibles 🎺 🔹 Bombines – El alma de la banda, marcando el ritmo con potencia y precisión. 🔹 Los Vientos – La fuerza melódica que resuena con orgullo en cada toque. 🔹 Liras y Xilófonos – La armonía y el brillo que hacen vibrar a todos. 🔹 Percusión – La base rítmica que da energía y carácter a la banda. 🔹 Bombos – El corazón que late con cada golpe, haciendo retumbar el suelo. Si tienes el espíritu de un guerrero, el amor por la música y las ganas de llevar a nuestra banda a lo más alto, este es tu lugar.</div>
-            </div>
-        </div>
-        <div class="card-title">Gastadores</div>
-        <div class="card" onmouseover="playHit()">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="gastodores general.jpg" alt="Gastadores">
-                </div>
-                <div class="card-back">🔥 ¡Únete a los Gastadores del Instituto Enrique Gómez Carrillo! 🔥 Si tienes fuerza, disciplina y presencia, este es tu momento. Los Gastadores son la élite de la Banda de Guerra, los que abren paso con firmeza y orgullo, los que representan el honor y la excelencia. ¿Qué significa ser un Gastador? ✅ Ser el rostro de la banda, con garbo y determinación. ✅ Liderar cada desfile con porte y respeto. ✅ Demostrar fuerza, carácter y coordinación en cada movimiento. Aquí no solo marchamos, dejamos huella. Si quieres ser parte de los mejores, demostrar tu liderazgo y representar con orgullo a nuestro instituto, este es tu lugar. </div>
-            </div>
-        </div>
-        <div class="card-title">Batonistas</div>
-        <div class="card" onmouseover="playDrum()">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="batonista general.jpg" alt="Batonistas">
-                </div>
-                <div class="card-back">💃✨ ¡Únete a las Batonistas del Instituto Enrique Gómez Carrillo! ✨💃 Si te gusta el ritmo, la elegancia y brillar en cada presentación, este es tu momento. Las Batonistas son el alma y la gracia de la banda, combinando coordinación, destreza y pasión en cada movimiento. 🎀 ¿Por qué ser parte de las Batonistas? 🔹 Dominarás el arte del batón con estilo y precisión. 🔹 Serás parte de un equipo donde la música y la danza se unen con energía y actitud. 🔹 Representarás con orgullo y elegancia a nuestro instituto en cada evento y competencia. Aquí no solo giramos el batón, dejamos huella con cada paso. 💫🔥</div>
-            </div>
+        <div class="content">
+            <h1 class="title">CONVOCATORIA</h1>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    <h3>📲🎶 ¡No te pierdas nada de la Banda del Instituto Enrique Gómez Carrillo! 🎶📲</h3>
-            
-                <p><a href="https://www.facebook.com/BandaEnriqueGomezCarrillo1982"><img src="facebook.png" width="50"/> </a> Síguenos en nuestras redes y vive cada momento con nosotros.</p>
-               <p> <a href="https://www.instagram.com/bandaegc/"><img src="instagram.png" width="50" /></a> Mantente al tanto de ensayos, eventos y competencias.</p>
-               <p><a href="https://www.tiktok.com/@bandaegc"><img src="tiktok.png"    width="50" /></a>Sé parte de nuestra historia y siente el ritmo de la banda.</p>
-                <p><a href="https://www.youtube.com/@BandaEnriqueGomezCarrillo"><img src="yt.png" width="50" /></a> Da el paso con nosotros y únete a la emoción. ¡Síguenos! 🚀🥁🎺</p>
-    <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-        }
-        function playDrum() {
-            document.getElementById("drumSound").play();
-        }
-        function playHit() {
-            document.getElementById("hitSound").play();
-        }
-        let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.style.opacity = i === index ? "1" : "0";
-    });
-}
-
-function changeSlide(direction) {
-    slideIndex += direction;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    showSlide(slideIndex);
-}
-
-// Cambio automático cada 3 segundos
-setInterval(() => changeSlide(1), 3000);
-
-// Mostrar la primera imagen al cargar la página
-showSlide(slideIndex);
-    </script>
+    <div class="social">
+        <a href="https://www.facebook.com/BandaEnriqueGomezCarrillo1982"><img src="fb.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/bandaegc/?api=1%2F&hl=zh-cn"><img src="ig.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@bandaegc"><img src="tk.png" alt="TikTok"></a>
+        <a href="https://www.youtube.com/@BandaEnriqueGomezCarrillo"><img src="yt.png" alt="YouTube"></a>
+    </div>
 </body>
 </html>
