@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatoria 2025 - Banda Enrique Gómez Carrillo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .active {
+            opacity: 1;
+        }
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5cm;
+            padding: 50px 20px;
+        }
+        .card-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+        }
+        .card {
+            width: 500px;
+            height: 250px;
+            perspective: 1000px;
+            position: relative;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card-back {
+            background: black;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .card-back video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card:nth-child(1) .card-front { border: 5px solid yellow; box-shadow: 0 0 15px yellow; }
+        .card:nth-child(2) .card-front { border: 5px solid red; box-shadow: 0 0 15px red; }
+        .card:nth-child(3) .card-front { border: 5px solid white; box-shadow: 0 0 15px white; }
+        .back-to-home {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🟡🔴️⚪Banda Enrique Gómez Carrillo🟡🔴️⚪</h1>
+    <div class="slideshow">
+        <div class="slide active"><img src="9.jpg" alt="Batonista"></div>
+        <div class="slide"><img src="5.jpg" alt="Gastador"></div>
+        <div class="slide"><img src="13.jpg" alt="Banda"></div>
+    </div>
+    <h2>Convocatoria 2025 de la Banda Enrique Gómez Carrillo</h2>
+        <h4>🟡🔴️⚪ Nadie se nos escapa🟡🔴️⚪</h4>
+        <br>
+        <h5>🎶 ¡Únete a la Banda del Instituto Enrique Gómez Carrillo! 🎶</h5>
+        <p>Si la música te mueve, si el ritmo está en tu sangre y si quieres formar parte de algo grande, esta es tu oportunidad. 🔥 Nuestra gloriosa banda está buscando nuevos integrantes con ganas de hacer historia. No importa si tienes experiencia o nunca has tocado un instrumento, aquí te enseñamos, te apoyamos y juntos haremos que nuestra banda brille como nunca. 🌟 Nuestra meta es clara: competir, ganar y dejar en alto el nombre de nuestro instituto. 🏆🎺🥁
+        </p>
+    <div class="cards-container">
+        <div>
+            <div class="card-title">Banda de Guerra</div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="12.jpg" alt="Banda de Guerra"></div>
+                    <div class="card-back">
+                        <video src="v1.mp4" autoplay loop muted></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-title">Gastadores</div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="3.jpg" alt="Gastadores"></div>
+                    <div class="card-back">
+                        <video src="v2.mp4" autoplay loop muted></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-title">Batonistas</div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front"><img src="4.jpg" alt="Batonistas"></div>
+                    <div class="card-back">
+                        <video src="v3.mp4" autoplay loop muted></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Volver al inicio</a>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === index);
+            });
+        }
+
+        function changeSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        setInterval(changeSlide, 3000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
