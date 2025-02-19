@@ -17,53 +17,74 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
             text-align: center;
+            color: white;
         }
         .container {
-            width: 80%;
-            text-align: left;
+            width: 90%;
+            max-width: 800px;
         }
         .header {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             position: absolute;
-            top: 20px;
+            top: 10px;
             width: 100%;
         }
         .header nav {
             display: flex;
-            gap: 40px;
+            gap: 20px;
         }
         .header nav a {
             color: white;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
         }
         .content {
             position: absolute;
-            bottom: 100px;
-            left: 50px;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
         }
         .title {
-            font-size: 60px;
+            font-size: 5vw;
             font-weight: bold;
-            margin-bottom: 10px;
         }
         .social {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             display: flex;
+            flex-direction: column;
             gap: 10px;
         }
         .social img {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
+        }
+        @media (max-width: 600px) {
+            .header nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .title {
+                font-size: 8vw;
+            }
+            .social {
+                top: auto;
+                bottom: 10px;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
         }
     </style>
 </head>
